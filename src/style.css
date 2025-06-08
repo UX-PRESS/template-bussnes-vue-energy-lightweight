@@ -1,0 +1,54 @@
+/* src/style.css */
+@import "tailwindcss";
+
+/* Fontes */
+@import url('https://fonts.googleapis.com/css2?family=Inter&family=Space+Grotesk&display=swap');
+
+:root {
+  --orange: #EE6F30;
+  --slate: #2E3A47;
+  --taupe: #7D7066;
+  --off-white: #FAF7F4;
+  --eco-green: #7FA37B;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--off-white);
+  color: var(--slate);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Space Grotesk', sans-serif;
+  color: var(--slate);
+}
+
+a {
+  color: var(--eco-green);
+  transition: color 0.3s ease;
+}
+a:hover {
+  color: var(--orange);
+}
+
+.btn-primary {
+  background-color: var(--orange);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 0.75rem;
+  transition: background-color 0.3s ease;
+}
+.btn-primary:hover {
+  background-color: #d65d1e;
+}
+
+.btn-secondary {
+  background-color: var(--taupe);
+  color: var(--off-white);
+  padding: 0.5rem 1rem;
+  border-radius: 0.75rem;
+  transition: background-color 0.3s ease;
+}
+.btn-secondary:hover {
+  background-color: var(--eco-green);
+}
