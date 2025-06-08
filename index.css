@@ -1,0 +1,5 @@
+/* ./src/index.css */
+@tailwind utilities;
+@plugin "flowbite/plugin";
+@source "../node_modules/flowbite";
+
