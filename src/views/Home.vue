@@ -1,9 +1,17 @@
 <template>
-    <SiteHeader id="home" />
+]    <HeroSection />
+    <AboutSection />
+    <SolucionsSection/>
+    <ProjextsSection/>
+    <ContactSection/>
    
 </template>
 
 <script setup>
-  import SiteHeader from '@/components/Header.vue'
+  import HeroSection from '@/components/HeroSection.vue';
+  import AboutSection from '@/components/AboutSection.vue';
+  import SolucionsSection from '@/components/SolucionsSection.vue';
+  import ProjextsSection from '@/components/ProjextsSection.vue';
+import ContactSection from '@/components/ContactSection.vue';
 
 </script>

@@ -1,9 +1,9 @@
 <template>
   <div class="min-h-screen bg-beige font-sans">
-    <RouterView />
+    <MainLayout/>
   </div>
 </template>
 
 <script setup>
-import { RouterView } from 'vue-router';
+import MainLayout from './layouts/MainLayout.vue';
 </script>
