@@ -5,50 +5,103 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter&family=Space+Grotesk&display=swap');
 
 :root {
-  --orange: #EE6F30;
-  --slate: #2E3A47;
-  --taupe: #7D7066;
-  --off-white: #FAF7F4;
-  --eco-green: #7FA37B;
+  /* Paleta com nomes semânticos e descritivos */
+  --royal-blue: #033E8C;        /* 🔵 Primária Base */
+  --solar-ember: #EE6F30;       /* 🟠 Contraste / CTAs */
+  --clay-taupe: #8A6F60;        /* 🟤 Neutro Terroso */
+  --amber-cream: #FFD89A;       /* 🟡 Acento vibrante */
+  --amber-cream-light: #ffe6b3;
+  --cloud-white: #F5F5F3;       /* ⚪ Fundo principal */
+  --sage-green: #7FA37B;        /* 🟢 Ecológico */
+  --graphite-black: #2B2B2B;    /* ⚫ Texto escuro */
+
+  /* Mapas semânticos reutilizáveis */
+  --primary: var(--royal-blue);
+  --contrast: var(--solar-ember);
+  --neutral: var(--clay-taupe);
+  --accent: var(--amber-cream);
+  --background: var(--cloud-white);
+  --eco: var(--sage-green);
+  --text-dark: var(--graphite-black);
 }
 
 body {
   font-family: 'Inter', sans-serif;
-  background-color: var(--off-white);
-  color: var(--slate);
+  background-color: var(--background);
+  color: var(--text-dark);
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Space Grotesk', sans-serif;
-  color: var(--slate);
+  color: var(--royal-blue);
+  text: bold;
 }
 
 a {
-  color: var(--eco-green);
+  color: var(--graphite-black);
   transition: color 0.3s ease;
 }
 a:hover {
-  color: var(--orange);
+  color: var(--contrast);
 }
 
 .btn-primary {
-  background-color: var(--orange);
+  background-color: var(--royal-blue);
   color: white;
   padding: 0.5rem 1rem;
   border-radius: 0.75rem;
   transition: background-color 0.3s ease;
 }
 .btn-primary:hover {
-  background-color: #d65d1e;
+  background-color: #FFD89A;
+  color:black;
+  
+  
 }
 
 .btn-secondary {
-  background-color: var(--taupe);
-  color: var(--off-white);
+  background-color: var(--amber-cream);
+  color: var(--royal-blue);
   padding: 0.5rem 1rem;
   border-radius: 0.75rem;
   transition: background-color 0.3s ease;
 }
 .btn-secondary:hover {
-  background-color: var(--eco-green);
+  background-color: var(--amber-cream-transparent);
+}
+
+@keyframes moveInBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.btn-animated {
+  animation: moveInBottom 1s ease-out;
+  animation-fill-mode: backwards;
+}
+
+.sunlight-overlay {
+  position: relative;
+  inset: 0;
+  z-index: 20; /* Between section and inner cards */
+  background: conic-gradient(
+    at 50% 30%,
+    rgba(255,255,200,0.3) 0deg,
+    rgba(0,0,0,0.95) 45deg 315deg,
+    rgba(255,255,200,0.3) 360deg
+  );
+  animation: spin 20s linear infinite;
+  mix-blend-mode: screen;
+  pointer-events: none; /* Let clicks through */
+  isolation: isolate;   /* Ensures blend mode doesn’t affect children incorrectly */ 
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
 }

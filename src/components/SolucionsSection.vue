@@ -1,29 +1,51 @@
 <template>
-  <section class="py-16 bg-[#FAF7F4] text-[var(--slate)] text-center">
-    <h2 class="text-3xl font-bold mb-6">Our Solutions</h2>
-    <p class="mb-10 max-w-2xl mx-auto">
-      From microgrids to farm installations, discover how AetherGrid empowers rural communities with smart energy.
-    </p>
+  <section class="relative z-10 px-6 md:px-16  pt-36 pb-20 ">
 
-    <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto px-4">
-      <div class="bg-white p-6 shadow rounded-xl">
-        <h3 class="font-semibold text-xl mb-2">Smart Microgrids</h3>
-        <p class="text-sm">Power small towns or island clusters with AI-optimized solar + wind energy.</p>
+  <!-- Insert the sunlight overlay here, positioned above bg but below cards -->
+    <div class="sunlight-overlay pointer-events-none"></div>
+    
+      <!-- Background Color Layer (below cards but not over Hero) -->
+    <div class="max-w-7xl mx-auto rounded-3xl shadow-xl py-16 px-6 md:px-12 -mt-90 items-left ">
+      <!-- Heading -->
+    
+      <!-- Cards -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 ">
+        <div v-for="(solution, index) in solutions" :key="index"
+          class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition ">
+          <img :src="solution.image" :alt="solution.title" class="w-full h-80 object-cover " />
+          <div class="p-6">
+            <h3 class="text-xl font-semibold mb-2 ">{{ solution.title }}</h3>
+            <p class="text-sm text-[var(--taupe)]">{{ solution.description }}</p>
+          </div>
+        </div>
       </div>
-      <div class="bg-white p-6 shadow rounded-xl">
-        <h3 class="font-semibold text-xl mb-2">Home & Farm Installations</h3>
-        <p class="text-sm">Panel systems with weather prediction, live monitoring, and backup storage.</p>
-      </div>
-      <div class="bg-white p-6 shadow rounded-xl">
-        <h3 class="font-semibold text-xl mb-2">Energy Consultancy</h3>
-        <p class="text-sm">Custom plans and feasibility studies for councils or retrofitting projects.</p>
+      <div class="text-center">
+        <router-link to="/solutions">
+          <button class="btn-secondary text-lg px-6 py-6 mt-10">
+            Explore All Solutions
+          </button>
+        </router-link>
       </div>
     </div>
-
-    <router-link to="/solutions">
-      <button class="mt-10 bg-[#EE6F30] text-white px-6 py-3 rounded-xl hover:bg-[#cf5f27] transition">
-        See All Solutions
-      </button>
-    </router-link>
   </section>
 </template>
+
+<script setup>
+const solutions = [
+  {
+    title: 'Smart Microgrids',
+    description: 'Ideal for remote villages, islands, and rural clusters — powered by AI-driven energy balancing.',
+    image: '/smart-microgrids.gif',
+  },
+  {
+    title: 'Home & Farm Installations',
+    description: 'Weather-optimized panels, battery backup, and real-time energy tracking for properties.',
+    image: '/home-farm.gif',
+  },
+  {
+    title: 'Energy Consultancy',
+    description: 'Custom energy planning and retrofit consulting for councils, businesses, and communities.',
+    image: '/energy-consultancy.gif',
+  },
+];
+</script>
