@@ -1,37 +1,31 @@
 <template>
-  <header class="bg-blur shadow-md">
+<header class="absolute top-0 left-0 w-full z-50 bg-transparent backdrop-blur-none">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex justify-between items-center h-20 relative">
-        <!-- Links à esquerda -->
-        <nav class="hidden md:flex space-x-10 font-medium text-white ">
-          <router-link to="/" class="hover:text-[var(--orange)] transition ">Home</router-link>
-          <router-link to="/about" class="hover:text-[var(--orange)] transition">About</router-link>
-          <router-link to="/solutions" class="hover:text-[var(--orange)] transition">Solutions</router-link>
-        </nav>
+      <div class="flex justify-between items-center h-20">
+        <!-- Logo and name -->
+        <router-link to="/" class="flex items-center space-x-2">
+          <img src="/logo.png" alt="AetherGrid Logo" class="h-10 w-10" />
+          <span class="text-2xl font-bold text-[var(--royal-blue)]">AetherGrid</span>
+        </router-link>
 
-        <!-- Logo central -->
-        <div class="absolute left-1/2 transform -translate-x-1/2">
-          <router-link to="/" class="flex items-center space-x-2">
-            <img src="/logo.png" alt="AetherGrid Logo" class="h-10 w-10" />
-              <span class="text-2xl font-bold text-black">AetherGrid</span>
+        <!-- Links desktop -->
+    <nav class="hidden md:flex space-x-6 items-center font-semibold">
+      <router-link to="/" class="">Home</router-link>
+      <router-link to="/about" class="hover:text-[var(--royal-blue)]">About</router-link>
+      <router-link to="/solutions" class="hover:text-[var(--royal-blue)]">Solutions</router-link>
+      <router-link to="/projects" class="hover:text-[var(--royal-blue)]">Projects</router-link>
+      <router-link to="/contact" class="hover:text-[var(--royal-blue)]">Contact</router-link>
+      <router-link to="/contact" class="btn-primary btn-animated hover:text-[var(--royal-blue)]">Get a Quote</router-link>
+    </nav>
 
-          </router-link>
-        </div>
 
-        <!-- Links à direita + CTA -->
-        <div class="hidden md:flex items-center space-x-10 font-medium text-white">
-          <router-link to="/projects" class="hover:text-[var(--orange)] transition">Projects</router-link>
-          <router-link to="/contact" class="hover:text-[var(--orange)] transition">Contact</router-link>
-          <router-link to="/contact" class="btn-primary">Talk </router-link>
-        </div>
-
-        <!-- Menu Mobile -->
+        <!-- Botão mobile -->
         <div class="md:hidden">
-          <button @click="mobileMenuOpen = !mobileMenuOpen" class="text-black focus:outline-none">
+          <button @click="mobileMenuOpen = !mobileMenuOpen" class="text-[var(--slate)] focus:outline-none">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2"
-                 viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
-              <path v-if="!mobileMenuOpen" d="M4 6h16M4 12h16M4 18h16"/>
-              <path v-else d="M6 18L18 6M6 6l12 12"/>
+              viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+              <path v-if="!mobileMenuOpen" d="M4 6h16M4 12h16M4 18h16" />
+              <path v-else d="M6 18L18 6M6 6l12 12" />
             </svg>
           </button>
         </div>
@@ -39,13 +33,13 @@
     </div>
 
     <!-- Menu Mobile -->
-    <div v-if="mobileMenuOpen" class="md:hidden bg-[var(--slate)] px-4 pt-2 pb-4 space-y-2">
-      <router-link to="/" class="block text-white hover:text-[var(--orange)]">Home</router-link>
-      <router-link to="/about" class="block text-white hover:text-[var(--orange)]">About</router-link>
-      <router-link to="/solutions" class="block text-white hover:text-[var(--orange)]">Solutions</router-link>
-      <router-link to="/projects" class="block text-white hover:text-[var(--orange)]">Projects</router-link>
-      <router-link to="/contact" class="block text-white hover:text-[var(--orange)]">Contact</router-link>
-      <router-link to="/contact" class="btn-primary block text-center mt-2">Talk to a Specialist</router-link>
+    <div v-if="mobileMenuOpen" class="md:hidden bg-white/80 backdrop-blur-sm px-4 pt-4 pb-6 space-y-2">
+      <router-link to="/" class="block text-[var(--slate)] hover:text-[var(--amber-cream)]">Home</router-link>
+      <router-link to="/about" class="block text-[var(--slate)] hover:text-[var(--amber-cream)]">About</router-link>
+      <router-link to="/solutions" class="block text-[var(--slate)] hover:text-[var(--amber-cream)]">Solutions</router-link>
+      <router-link to="/projects" class="block text-[var(--slate)] hover:text-[var(--amber-cream)]">Projects</router-link>
+      <router-link to="/contact" class="block text-[var(--slate)] hover:text-[var(--amber-cream)]">Contact</router-link>
+      <router-link to="/contact" class="btn-primary block text-center mt-2">Get a Quote</router-link>
     </div>
   </header>
 </template>

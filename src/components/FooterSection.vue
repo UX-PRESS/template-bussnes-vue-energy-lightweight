@@ -1,7 +1,7 @@
 <template>
   <footer
     class="bg-[#2E3A47] text-[#FAF7F4] py-6 px-6 md:px-12 flex flex-wrap justify-between items-center gap-4"
-  >
+>
     <!-- Logo + Tagline -->
     <div class="flex flex-col md:flex-row md:items-center space-y-2 md:space-y-0 md:space-x-3 flex-shrink-0 min-w-[220px]">
       <svg
