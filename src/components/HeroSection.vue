@@ -7,7 +7,7 @@
 
 
     <!-- Card invadindo a próxima seção -->
-<div class="max-w-7xl sm:px-20 mx-auto  ml-80 ">
+<div class="max-w-7xl sm:px-68 ml-126">
       <div class="relative grid text-right text-black z-10" >
       <h3 class= "px-5 py-2.5 me-2 mb-2">Solar Panels</h3>
       <h1 class="text-shadow-lg text-2xl sm:text-5xl md:text-7xl font-bold leading-tight mb-4">
