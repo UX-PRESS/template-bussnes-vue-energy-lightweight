@@ -3,20 +3,20 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex justify-between items-center h-20">
         <!-- Logo and name -->
-        <router-link to="/" class="flex items-center space-x-2">
-          <img src="/logo.png" alt="AetherGrid Logo" class="h-10 w-10" />
-          <span class="text-2xl font-bold text-[var(--royal-blue)]">AetherGrid</span>
-        </router-link>
-
+        
         <!-- Links desktop -->
-    <nav class="hidden md:flex space-x-6 items-center font-semibold">
+    <nav class="nav-blur hidden md:flex">
       <router-link to="/" class="">Home</router-link>
       <router-link to="/about" class="hover:text-[var(--royal-blue)]">About</router-link>
       <router-link to="/solutions" class="hover:text-[var(--royal-blue)]">Solutions</router-link>
       <router-link to="/projects" class="hover:text-[var(--royal-blue)]">Projects</router-link>
       <router-link to="/contact" class="hover:text-[var(--royal-blue)]">Contact</router-link>
-      <router-link to="/contact" class="btn-primary btn-animated hover:text-[var(--royal-blue)]">Get a Quote</router-link>
     </nav>
+    <router-link to="/" class="flex items-center space-x-2">
+          <img src="/logo.png" alt="AetherGrid Logo" class="h-10 w-10" />
+          <span class="text-2xl font-bold text-[var(--royal-blue)]">AetherGrid</span>
+        </router-link>
+
 
 
         <!-- Botão mobile -->
