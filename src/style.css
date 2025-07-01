@@ -6,14 +6,12 @@
 
 :root {
   /* Paleta com nomes semânticos e descritivos */
-  --royal-blue: #033E8C;        /* 🔵 Primária Base */
-  --solar-ember: #EE6F30;       /* 🟠 Contraste / CTAs */
-  --clay-taupe: #8A6F60;        /* 🟤 Neutro Terroso */
-  --amber-cream: #FFD89A;       /* 🟡 Acento vibrante */
+  --royal-blue: #033E8C;        
+  --clay-taupe: #8A6F60;        
+  --amber-cream: #FFD89A;       
   --amber-cream-light: #ffe6b3;
-  --cloud-white: #F5F5F3;       /* ⚪ Fundo principal */
-  --sage-green: #7FA37B;        /* 🟢 Ecológico */
-  --graphite-black: #2B2B2B;    /* ⚫ Texto escuro */
+  --cloud-white: #F5F5F3;       
+  --graphite-black: #2B2B2B;    
 
   /* Mapas semânticos reutilizáveis */
   --primary: var(--royal-blue);
@@ -70,39 +68,29 @@ a:hover {
   background-color: var(--amber-cream-transparent);
 }
 
-@keyframes moveInBottom {
-  0% {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
+/* nav desktop */
+.nav-blur {
+  backdrop-filter: blur(8px);
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 9999px;
+  padding: 0.75rem 1.5rem;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  transition: background-color 0.3s ease;
 }
 
-.btn-animated {
-  animation: moveInBottom 1s ease-out;
-  animation-fill-mode: backwards;
+.nav-blur a {
+  font-weight: 600;
+  color: var(--graphite-black);
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  transition: all 0.3s ease;
+  display: inline-block;
 }
 
-.sunlight-overlay {
-  position: relative;
-  inset: 0;
-  z-index: 20; /* Between section and inner cards */
-  background: conic-gradient(
-    at 50% 30%,
-    rgba(255,255,200,0.3) 0deg,
-    rgba(0,0,0,0.95) 45deg 315deg,
-    rgba(255,255,200,0.3) 360deg
-  );
-  animation: spin 20s linear infinite;
-  mix-blend-mode: screen;
-  pointer-events: none; /* Let clicks through */
-  isolation: isolate;   /* Ensures blend mode doesn’t affect children incorrectly */ 
+.nav-blur a:hover {
+  background-color: white;
+  color: var(--royal-blue);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); 
 }
-
-@keyframes spin {
-  to { transform: rotate(360deg); }
-}
-
