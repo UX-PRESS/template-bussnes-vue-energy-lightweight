@@ -1,36 +1,37 @@
 <template>
-  <section class="relative h-[700px] bg-cover bg-center flex items-center justify-end px-6 sm:px-12"
-    style="background-image: url('/solarpanel.jpg')"
-  >
-    <!-- Overlay -->
-     <div class="absolute  inset-0 bg-gradient-to-l from-white/70 to-transparent z-10 pointer-events-none"></div>
+  <section class="relative h-screen bg-cover bg-center flex items-center justify-between px-6 sm:px-12"  
+  style="background-image: url('/solarpanel.jpg');">
+<!-- Shape Divider -->
+<div class="absolute bottom-0 left-0 w-full overflow-hidden leading-none">
+  <img src="/Wave.svg" class="relative block w-full h-full" />
+</div>
 
-
-    <!-- Card invadindo a próxima seção -->
-<div class="max-w-7xl sm:px-68 ml-126">
-      <div class="relative grid text-right text-black z-10" >
-      <h3 class= "px-5 py-2.5 me-2 mb-2">Solar Panels</h3>
-      <h1 class="text-shadow-lg text-2xl sm:text-5xl md:text-7xl font-bold leading-tight mb-4">
-        Local.
-        Smart Energy. Sustainable.
-      </h1>
-      <p class="text-md sm:text-lg md:text-xl mb-6">
-        Solar technology from AetherGrid - 
-        <span class="relative inline-block">
-          <span class="bg-amber-cream/30 px-1 rounded font-bold text-shadow-lg animate-pulse-energy">
-            empowering communities.
+    
+    <div class="max-w-7xl sm:px-68 ml-180 -mt-20">
+      <div class="relative grid text-right text-black z-10">
+        <h3 class=" px-5 py-2.5 me-2 mb-2">Solar Panels</h3>
+        <h1 class="  text-2xl sm:text-xl md:text-7xl  leading-tight mb-4">
+          Local.<br/>
+           Sustainable.<br/>
+           Smart Energy.
+        </h1>
+        <p class="text-md sm:text-lg md:text-xl mb-6">
+          Solar technology from AetherGrid -
+          <span class="relative inline-block">
+            <span class="bg-amber-cream/30 px-1 rounded font-bold text-shadow-lg animate-pulse-energy">
+              empowering communities.
+            </span>
           </span>
-        </span>
-      </p>
-      <div class="space-x-4">
-        <router-link to="/contact" class="btn-primary inline-block">
-          Get Product
-        </router-link>
-        <router-link to="/contact" class="btn-secondary inline-block">
-          Know More
-        </router-link>
+        </p>
+        <div class="space-x-4">
+          <router-link to="/contact" class="btn-primary inline-block">
+            Get Product
+          </router-link>
+          <router-link to="/contact" class="btn-secondary inline-block">
+            Know More
+          </router-link>
+        </div>
       </div>
-    </div>
     </div>
   </section>
 </template>
@@ -46,6 +47,7 @@ import { ref } from 'vue'
     transform: translateY(40px);
     opacity: 0;
   }
+
   to {
     transform: translateY(0);
     opacity: 1;

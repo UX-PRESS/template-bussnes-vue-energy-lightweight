@@ -1,7 +1,7 @@
 <template>
 <header class="absolute top-0 left-0 w-full z-50 bg-transparent backdrop-blur-none">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex justify-between items-center h-20">
+      <div class="flex justify-between items-center h-20 pt-12 ">
         <!-- Logo and name -->
         
         <!-- Links desktop -->
@@ -16,8 +16,6 @@
           <img src="/logo.png" alt="AetherGrid Logo" class="h-10 w-10" />
           <span class="text-2xl font-bold text-[var(--royal-blue)]">AetherGrid</span>
         </router-link>
-
-
 
         <!-- Botão mobile -->
         <div class="md:hidden">

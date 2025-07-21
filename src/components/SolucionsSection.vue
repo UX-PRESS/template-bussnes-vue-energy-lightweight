@@ -1,5 +1,5 @@
 <template>
-  <section class="relative z-10 px-6 md:px-16 -mt-75 pt-36 pb-20 ">
+  <section class="relative z-10 px-6 md:px-16 pt-36 pb-20 ">
 
       <!-- Cards -->
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-7xl -mt-75 mx-auto py-16 px-3 items-left ">
