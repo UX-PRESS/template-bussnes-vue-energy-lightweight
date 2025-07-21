@@ -1,5 +1,5 @@
 <template>
-  <section class="relative z-10 px-6 md:px-16 -mt-75 pt-36 pb-20 ">
+  <section class="relative z-10 px-6 md:px-16 pt-36 pb-20 ">
 
   <!-- Insert the sunlight overlay here, positioned above bg but below cards -->
     <div class="sunlight-overlay pointer-events-none"></div>
