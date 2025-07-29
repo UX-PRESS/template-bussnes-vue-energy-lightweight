@@ -1,6 +1,6 @@
 <template>
-<section class="bg-[#FAF7F4] text-[#2E3A47] py-12 px-6 md:px-16 gap-8" >
-<div class="flex flex-col md:flex-row items-center justify-center gap-8 ">
+<section class="relative z-10 py-40 px-6 sm:px-12">
+<div class="flex flex-col md:flex-row items-center justify-center gap-8 text-white ">
     
     <!-- Left: Short phrase -->
     <div class=" font-bold text-center md:text-left text-xl">

@@ -1,37 +1,43 @@
 <template>
-  <section class="relative z-10 px-6 md:px-16 pt-36 pb-20 ">
-
-      <!-- Cards -->
-      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-7xl mx-auto py-16 px-3 items-left ">
-
-        <div v-for="(solution, index) in solutions" :key="index"
-          class="bg-white shadow-md overflow-hidden hover:shadow-lg transition ">
-          <img :src="solution.image" :alt="solution.title" class=" h-40  " />
-          <div class="p-6">
-            <h3 class="text-xl font-semibold mb-2 ">{{ solution.title }}</h3>
-            <p class="text-sm text-[var(--taupe)]">{{ solution.description }}</p>
-          </div>
+  <section
+    class="relative -top-70 min-h-screen bg-cover bg-center flex items-center justify-center px-6 sm:px-12 z-0"
+    style="background-image: url('/light.png');"
+  >
+    <div class="w-full flex justify-center">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+        <div
+          v-for="(card, index) in cards"
+          :key="index"
+          class="w-90 h-90 rounded-full bg-[var(--amber-cream)] shadow-lg flex flex-col items-center justify-center text-center p-6 hover:scale-105 transition-all duration-300"
+        >
+          <h1 class="text-lg font-semibold text-[var(--graphite-black)] mb-2">
+            {{ card.title }}
+          </h1>
+          <p class="text-sm text-[var(--graphite-black)]">
+            {{ card.description }}
+          </p>
         </div>
       </div>
+    </div>
   </section>
 </template>
 
 <script setup>
-const solutions = [
+const cards = [
   {
     title: 'Smart Microgrids',
-    description: 'Ideal for remote villages, islands, and rural clusters — powered by AI-driven energy balancing.',
-    image: '',
+    description:
+      'Ideal for remote villages, islands, and rural clusters — powered by AI-driven energy balancing.',
   },
   {
-    title: 'Home & Farm Installations',
-    description: 'Weather-optimized panels, battery backup, and real-time energy tracking for properties.',
-    image: '/',
+    title: 'Home & Farm Installation',
+    description:
+      'Weather-optimized panels, battery backup, and real-time energy tracking for properties.',
   },
   {
     title: 'Energy Consultancy',
-    description: 'Custom energy planning and retrofit consulting for councils, businesses, and communities.',
-    image: '/',
+    description:
+      'Custom energy planning and retrofit consulting for councils, businesses, and communities.',
   },
 ];
 </script>

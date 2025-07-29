@@ -3,7 +3,7 @@
   style="background-image: url('/solarpanel.jpg');">
 <!-- Shape Divider -->
 <div class="absolute bottom-0 left-0 w-full overflow-hidden leading-none">
-  <img src="/Wave.svg" class="relative block w-full h-full" />
+  <img src="/image.png" class="relative  w-full h-full translate-y-[1mm]" />
 </div>
 
     
