@@ -20,7 +20,7 @@
     <!-- Right: Button -->
     <div>
       <router-link to="/about">
-        <button class="btn-primary">
+        <button class="btn-primary flicker">
           See More
         </button>
       </router-link>

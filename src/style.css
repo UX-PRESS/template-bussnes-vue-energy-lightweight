@@ -4,19 +4,13 @@
 
 :root {
   --royal-blue: #033E8C;        
-  --clay-taupe: #8A6F60;        
-  --amber-cream: #FFD89A;       
-  --amber-cream-light: #ffe6b3;
-  --cloud-white: #F5F5F3;       
   --graphite-black: #2B2B2B;    
+  --pastel-yellow: #ffebb0;     /* cor da luz ligada */
+  --pastel-yellow-dark: #ffd89a; /* piscada da luz */
 
   --primary: var(--royal-blue);
-  --contrast: var(--solar-ember);
-  --neutral: var(--clay-taupe);
-  --accent: var(--amber-cream);
-  --background: var(--cloud-white);
-  --eco: var(--sage-green);
   --text-dark: var(--graphite-black);
+  --secondary: var(--pastel-yellow);
 }
 
 body {
@@ -25,20 +19,23 @@ body {
   color: var(--text-dark);
 }
 
+/* Tipografia */
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Space Grotesk', sans-serif;
   color: var(--royal-blue);
-  text: bold;
+  font-weight: bold;
 }
 
+/* Links */
 a {
   color: var(--graphite-black);
   transition: color 0.3s ease;
 }
 a:hover {
-  color: var(--contrast);
+  color: black;
 }
 
+/* Botões */
 .btn-primary {
   background-color: var(--royal-blue);
   color: white;
@@ -47,61 +44,118 @@ a:hover {
   transition: background-color 0.3s ease;
 }
 .btn-primary:hover {
-  background-color: #FFD89A;
-  color:black;
-  
+  background-color: var(--pastel-yellow);
+  color: black;
 }
 
 .btn-secondary {
-  background-color: var(--amber-cream);
+  background-color: var(--pastel-yellow);
   color: var(--royal-blue);
   padding: 0.5rem 1rem;
   border-radius: 0.75rem;
   transition: background-color 0.3s ease;
 }
 .btn-secondary:hover {
-  background-color: var(--amber-cream-transparent);
+  background-color: var(--royal-blue);
+  color: white;
 }
 
-/* nav desktop */
+/* Nav desktop */
 @media (min-width: 768px) {
-.nav-blur {
-  backdrop-filter: blur(8px);
-  background-color: rgba(255, 255, 255, 0.1);
-  border-radius: 9999px;
-  padding: 0.75rem 1.5rem;
-  display: flex;
-  gap: 1rem;
-  align-items: center;
-  transition: background-color 0.3s ease;
-}
+  .nav-blur {
+    backdrop-filter: blur(8px);
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 9999px;
+    padding: 0.75rem 1.5rem;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    transition: background-color 0.3s ease;
+  }
 
-.nav-blur a {
-  font-weight: 600;
-  color: var(--graphite-black);
-  padding: 0.5rem 1rem;
-  border-radius: 9999px;
-  transition: all 0.3s ease;
-  display: inline-block;
-}
+  .nav-blur a {
+    font-weight: 600;
+    color: var(--graphite-black);
+    padding: 0.5rem 1rem;
+    border-radius: 9999px;
+    transition: all 0.3s ease;
+    display: inline-block;
+  }
 
-.nav-blur a:hover {
-  background-color: white;
-  color: var(--royal-blue);
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); 
-
-}
-}
-// card
-/* mobile: todos centralizados e alinhados */
-@media (max-width: 768px) {
-  .card {
-    margin: 0 auto; /* centraliza horizontalmente */
-    transform: none !important; /* remove deslocamento */
+  .nav-blur a:hover {
+    background-color: white;
+    color: var(--royal-blue);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); 
   }
 }
 
-/* desktop: aplica o desnível e afastamento */
+/* Cards */
+.card {
+  background-color: var(--pastel-yellow);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  animation: flicker 3s infinite;
+  box-shadow: 0 0 15px rgba(255, 235, 176, 0.5);
+  border-radius: 9999px; /* mantem arredondado */
+  text-align: center;
+  padding: 1.5rem;
+}
+
+/* Textos dos cards */
+/* Neon effect para cards */
+.card {
+  background-color: var(--pastel-yellow); /* base suave */
+  border-radius: 9999px;
+  padding: 1.5rem;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: flicker 3s infinite;
+
+  /* Neon glow */
+  box-shadow: 
+    0 0 8px var(--pastel-yellow-dark),
+    0 0 16px var(--pastel-yellow-dark),
+    0 0 24px var(--pastel-yellow-dark),
+    0 0 32px var(--pastel-yellow-dark);
+}
+
+
+/* Neon hover: mais intenso */
+.card:hover {
+  transform: scale(1.05);
+  box-shadow:
+    0 0 12px var(--pastel-yellow-dark),
+    0 0 24px var(--pastel-yellow-dark),
+    0 0 36px var(--pastel-yellow-dark),
+    0 0 48px var(--pastel-yellow-dark);
+}
+
+/* Flicker neon: brilho pulsante */
+@keyframes flicker {
+  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+    box-shadow:
+      0 0 8px var(--pastel-yellow-dark),
+      0 0 16px var(--pastel-yellow-dark),
+      0 0 24px var(--pastel-yellow-dark),
+      0 0 32px var(--pastel-yellow-dark);
+  }
+  20%, 24%, 55% {
+    box-shadow:
+      0 0 12px var(--pastel-yellow),
+      0 0 20px var(--pastel-yellow),
+      0 0 28px var(--pastel-yellow),
+      0 0 36px var(--pastel-yellow);
+  }
+}
+
+/* Mobile: cards centralizados */
+@media (max-width: 768px) {
+  .card {
+    margin: 0 auto;
+    transform: none !important;
+  }
+}
+
+/* Desktop: posição e afastamento dos cards */
 @media (min-width: 1024px) {
   .card:nth-child(1) {
     margin-top: 0; 
@@ -113,6 +167,6 @@ a:hover {
 
   .card:nth-child(3) {
     margin-top: 0;
-    margin-left: 50px; /* afasta do card do meio */
+    margin-left: 50px;
   }
 }
