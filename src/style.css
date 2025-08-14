@@ -50,7 +50,6 @@ a:hover {
   background-color: #FFD89A;
   color:black;
   
-  
 }
 
 .btn-secondary {
@@ -93,18 +92,27 @@ a:hover {
 
 }
 }
-.wave-container {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 100; 
-  overflow: hidden;
-  line-height: ;
+// card
+/* mobile: todos centralizados e alinhados */
+@media (max-width: 768px) {
+  .card {
+    margin: 0 auto; /* centraliza horizontalmente */
+    transform: none !important; /* remove deslocamento */
+  }
 }
 
-.wave-container svg {
-  position: relative;
-  display: block;
-  width: calc(100% + 1.3px);   height: 100%;
+/* desktop: aplica o desnível e afastamento */
+@media (min-width: 1024px) {
+  .card:nth-child(1) {
+    margin-top: 0; 
+  }
+
+  .card:nth-child(2) {
+    transform: translateY(260px);
+  }
+
+  .card:nth-child(3) {
+    margin-top: 0;
+    margin-left: 50px; /* afasta do card do meio */
+  }
 }
