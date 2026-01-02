@@ -1,20 +1,21 @@
 <template>
   <section
-    class="relative h-screen bg-cover bg-center flex items-center justify-end px-6 sm:px-12 lg:px-20"
-    style="background-image: url('/solarpanel.jpg');"
-  >
+    class="relative h-screen bg-cover bg-center flex items-center  px-6 sm:px-12 lg:px-20">
+     <div class="absolute inset-0 -z-10 bg-cover bg-center" 
+       style="background-image: url('/solarpanel.jpg'); transform: scaleX(-1);">
+  </div>
     <!-- Shape Divider -->
-    <div class="absolute bottom-0 left-0 w-full overflow-hidden leading-none pointer-events-none">
-      <img src="/image.png" class="relative w-full h-full translate-y-[1mm]" />
+    <div class="absolute bottom-0 left-0 w-full">
+      <img src="/image.png" class="relative w-full h-full translate-y-[3mm]" style="transform: scaleX(-1);" />
     </div>
 
-    <div class="max-w-3xl text-right text-black z-10 -mt-20">
+    <div class="max-w-3xl text-right text-black z-10 ">
       <div class="space-y-4">
         <h3 class="px-5 py-2.5 mb-2">Solar Panels</h3>
         <h1 class="text-xl sm:text-3xl md:text-7xl font-bold leading-tight mb-4">
           Local.<br />
           Sustainable.<br />
-          Smart Energy.
+          <span class="neon-flicker">Smart Energy.</span>
         </h1>
         <p class="text-md sm:text-lg md:text-xl mb-6 max-w-md mx-auto sm:mx-0">
           Solar technology from AetherGrid -
