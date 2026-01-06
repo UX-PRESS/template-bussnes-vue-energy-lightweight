@@ -1,323 +1,148 @@
-/* src/style.css */
 @import url('https://fonts.googleapis.com/css2?family=Inter&family=Space+Grotesk&display=swap');
 @import "tailwindcss";
 
+/* =========================
+   Variables
+========================= */
 :root {
   --royal-blue: #033E8C;
   --orange: #FF6F00;
   --graphite-black: #2B2B2B;
   --pastel-yellow: #ffebb0;
-  /* cor da luz ligada */
   --pastel-yellow-dark: #ffd89a;
-  /* piscada da luz */
-
-  --primary: var(--royal-blue);
-  --text-dark: var(--graphite-black);
-  --secondary: var(--pastel-yellow);
 }
 
+/* =========================
+   Base
+========================= */
 body {
   font-family: 'Inter', sans-serif;
-  background: black;
-  color: var(--text-dark);
+  background: #000;
+  color: var(--graphite-black);
 }
 
-/* Typography */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1, h2, h3, h4, h5, h6 {
   font-family: 'Space Grotesk', sans-serif;
   color: var(--royal-blue);
-  font-weight: bold;
+  font-weight: 700;
 }
 
-/* Links */
 a {
   color: var(--graphite-black);
-  transition: color 0.3s ease;
+  transition: color 0.2s ease;
 }
 
 a:hover {
-  color: black;
+  color: #000;
 }
 
-/* Buttons */
-/* Primary button */
-.btn-primary {
+/* =========================
+   Buttons
+========================= */
+.btn-primary,
+.btn-secondary {
   display: inline-block;
-  transition: all 0.2s ease-in;
-  position: relative;
-  overflow: hidden;
-  z-index: 1;
-
-  color: #ffffff;
   padding: 0.7em 1.7em;
-  cursor: pointer;
   font-size: 18px;
-  border-radius: 0.5em;
-
-  background: var(--orange);
-  border: 1px solid var(--orange);
-
-  box-shadow:
-    6px 6px 12px rgba(0, 0, 0, 0.25),
-    -6px -6px 12px rgba(255, 255, 255, 0.2);
   font-weight: 600;
   letter-spacing: 0.03em;
-
+  border-radius: 0.5em;
+  cursor: pointer;
+  transition: all 0.25s ease;
 }
 
-.btn-primary:active {
-  color: #ffffff;
-  box-shadow:
-    inset 4px 4px 12px rgba(0, 0, 0, 0.25),
-    inset -4px -4px 12px rgba(255, 255, 255, 0.2);
-}
-
-.btn-primary::before {
-  content: "";
-  position: absolute;
-  left: 50%;
-  top: 100%;
-  transform: translateX(-50%) scaleY(1) scaleX(1.25);
-
-  width: 140%;
-  height: 180%;
-  background-color: rgba(255, 255, 255, 0.15);
-  border-radius: 50%;
-
-  transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
-  z-index: -1;
-}
-
-.btn-primary::after {
-  content: "";
-  position: absolute;
-  left: 55%;
-  top: 180%;
-  transform: translateX(-50%) scaleY(1) scaleX(1.45);
-
-  width: 160%;
-  height: 190%;
-  background-color: var(--pastel-yellow);
-  border-radius: 50%;
-
-  transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
-  z-index: -1;
+/* Primary */
+.btn-primary {
+  color: #fff;
+  background: var(--orange);
+  border: 1px solid var(--orange);
 }
 
 .btn-primary:hover {
+  background: var(--pastel-yellow);
+  border-color: var(--pastel-yellow);
   color: #000;
-  border: 1px solid var(--pastel-yellow);
 }
 
-.btn-primary:hover::before {
-  top: -35%;
-  background-color: var(--pastel-yellow);
-  transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
-}
-
-.btn-primary:hover::after {
-  top: -45%;
-  background-color: var(--pastel-yellow);
-  transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
-}
-
-/* Secondary button */
+/* Secondary */
 .btn-secondary {
-  display: inline-block;
-  transition: all 0.2s ease-in;
-  position: relative;
-  overflow: hidden;
-  z-index: 1;
-  color: #090909;
-  padding: 0.7em 1.7em;
-  cursor: pointer;
-  font-size: 18px;
-  border-radius: 0.5em;
-  background: #e8e8e8;
-  border: 1px solid #e8e8e8;
-  box-shadow: 6px 6px 12px #c5c5c5, -6px -6px 12px #ffffff;
-  font-weight: 600;
-  letter-spacing: 0.03em;
-}
-
-.btn-secondary:active {
-  color: #f30a0a;
-  box-shadow: inset 4px 4px 12px #c5c5c5, inset -4px -4px 12px #ffffff;
-}
-
-.btn-secondary:before {
-  content: "";
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%) scaleY(1) scaleX(1.25);
-  top: 100%;
-  width: 140%;
-  height: 180%;
-  background-color: rgba(0, 0, 0, 0.05);
-  border-radius: 50%;
-  display: block;
-  transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
-  z-index: -1;
-}
-
-.btn-secondary:after {
-  content: "";
-  position: absolute;
-  left: 55%;
-  transform: translateX(-50%) scaleY(1) scaleX(1.45);
-  top: 180%;
-  width: 160%;
-  height: 190%;
-  background-color: #033E8C;
-  border-radius: 50%;
-  display: block;
-  transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
-  z-index: -1;
+  color: var(--royal-blue);
+  background: #f2f2f2;
+  border: 1px solid #e0e0e0;
 }
 
 .btn-secondary:hover {
-  color: #ffffff;
-  border: 1px solid #033E8C;
+  background: var(--royal-blue);
+  color: #fff;
+  border-color: var(--royal-blue);
 }
 
-.btn-secondary:hover:before {
-  top: -35%;
-  background-color: #033E8C;
-  transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
-}
-
-.btn-secondary:hover:after {
-  top: -45%;
-  background-color: #033E8C;
-  transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
-}
-
-/* Nav desktop */
+/* =========================
+   Navigation (Desktop)
+========================= */
 @media (min-width: 768px) {
   .nav-blur {
     backdrop-filter: blur(8px);
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: rgba(255, 255, 255, 0.15);
     border-radius: 9999px;
     padding: 0.75rem 1.5rem;
     display: flex;
     gap: 1rem;
     align-items: center;
-    transition: background-color 0.3s ease;
   }
 
   .nav-blur a {
     font-weight: 600;
-    color: var(--graphite-black);
     padding: 0.5rem 1rem;
     border-radius: 9999px;
-    transition: all 0.3s ease;
-    display: inline-block;
+    transition: background-color 0.2s ease;
   }
 
   .nav-blur a:hover {
-    background-color: white;
+    background-color: #fff;
     color: var(--royal-blue);
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   }
 }
 
-/* Cards */
+/* =========================
+   Cards
+========================= */
 .card {
   background-color: var(--pastel-yellow);
-  transition: background-color 0.3s ease, transform 0.3s ease;
-  animation: flicker 3s infinite;
-  box-shadow: 0 0 15px rgba(255, 235, 176, 0.5);
-  border-radius: 9999px;
-  /* mantem arredondado */
-  text-align: center;
-  padding: 1.5rem;
-}
-
-/* Textos dos cards */
-/* Neon effect para cards */
-.card {
-  background-color: var(--pastel-yellow);
-  /* base suave */
   border-radius: 9999px;
   padding: 1.5rem;
   text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  animation: flicker 3s infinite;
-
-  /* Neon glow */
-  box-shadow:
-    0 0 8px var(--pastel-yellow-dark),
-    0 0 16px var(--pastel-yellow-dark),
-    0 0 24px var(--pastel-yellow-dark),
-    0 0 32px var(--pastel-yellow-dark);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  box-shadow: 0 8px 24px rgba(255, 216, 154, 0.4);
 }
 
-
-/* Neon hover: mais intenso */
 .card:hover {
-  transform: scale(1.05);
-  box-shadow:
-    0 0 12px var(--pastel-yellow-dark),
-    0 0 24px var(--pastel-yellow-dark),
-    0 0 36px var(--pastel-yellow-dark),
-    0 0 48px var(--pastel-yellow-dark);
+  transform: translateY(-6px);
+  box-shadow: 0 12px 32px rgba(255, 216, 154, 0.6);
 }
 
-/* Flicker neon: brilho pulsante */
-@keyframes flicker {
-
-  0%,
-  19%,
-  21%,
-  23%,
-  25%,
-  54%,
-  56%,
-  100% {
-    box-shadow:
-      0 0 8px var(--pastel-yellow-dark),
-      0 0 16px var(--pastel-yellow-dark),
-      0 0 24px var(--pastel-yellow-dark),
-      0 0 32px var(--pastel-yellow-dark);
-  }
-
-  20%,
-  24%,
-  55% {
-    box-shadow:
-      0 0 12px var(--pastel-yellow),
-      0 0 20px var(--pastel-yellow),
-      0 0 28px var(--pastel-yellow),
-      0 0 36px var(--pastel-yellow);
-  }
+.card-image {
+  width: 100%;
+  height: auto;
+  border-radius: 9999px;
+  margin-bottom: 1rem;
 }
 
-/* Mobile: cards centralizados */
+/* =========================
+   Responsive
+========================= */
 @media (max-width: 768px) {
   .card {
     margin: 0 auto;
-    transform: none !important;
   }
 }
 
-/* Desktop: posição e afastamento dos cards */
 @media (min-width: 1024px) {
-  .card:nth-child(1) {
-    margin-top: 0;
-  }
-
   .card:nth-child(2) {
-    transform: translateY(260px);
+    transform: translateY(120px);
   }
 
   .card:nth-child(3) {
-    margin-top: 0;
     margin-left: 50px;
   }
-  
 }

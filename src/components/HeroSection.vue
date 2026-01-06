@@ -15,7 +15,7 @@
         <h1 class="text-xl sm:text-3xl md:text-7xl font-bold leading-tight mb-4">
           Local.<br />
           Sustainable.<br />
-          <span class="neon-flicker">Smart Energy.</span>
+          <span>Smart Energy.</span>
         </h1>
         <p class="text-md sm:text-lg md:text-xl mb-6 max-w-md mx-auto sm:mx-0">
           Solar technology from AetherGrid -
