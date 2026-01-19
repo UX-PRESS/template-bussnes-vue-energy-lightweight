@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-screen bg-beige font-sans">
+  <div class="min-h-screen bg-beige font-sans "> 
     <MainLayout/>
   </div>
 </template>
